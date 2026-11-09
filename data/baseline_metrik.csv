@@ -1,0 +1,7 @@
+Komoditas,Model Baseline,MAE (Rp),RMSE (Rp)
+cabe_rawit,Naive (Lag 1),1108.3788166266718,3168.876714272403
+cabe_rawit,Seasonal Naive (Lag 7),3992.4878334702244,8035.263620877117
+bawang_merah,Naive (Lag 1),420.34069552319085,1754.152371825339
+bawang_merah,Seasonal Naive (Lag 7),1301.9777925216406,2837.179831063851
+beras_premium,Naive (Lag 1),13.343908233149675,88.00800560974362
+beras_premium,Seasonal Naive (Lag 7),47.28915820828911,151.76241491617898
