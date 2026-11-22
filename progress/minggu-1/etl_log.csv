@@ -1,0 +1,45 @@
+tahun,bulan,file,status,sheet_harian_terbaca,sheet_harian_kosong,hari_tanpa_sumber,offset_hari_1,pasar_kurang_7,tanggal_label_salah,sumber
+2023,1,01. REKAP JANUARI 2023.xlsx,ok,31,,,3,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2023,2,02. REKAP FEBRUARI 2023.xlsx,ok,28,,,3,0,,cabe_rawit=28; bawang_merah=28; beras_premium=28
+2023,3,03. REKAP MARET 2023.xlsx,ok,31,,,3,0,sheet 30 -> tertulis 30/4/2023,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2023,4,04. REKAP APRIL 2023.xlsx,ok,28,,"22,23",3,0,sheet 29 -> tertulis 30/4/2023,cabe_rawit=28; bawang_merah=28; beras_premium=28
+2023,5,05. REKAP MEI 2023.xlsx,ok,31,,,3,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2023,6,06. REKAP JUNI 2023.xlsx,ok,29,,29,3,0,,cabe_rawit=29; bawang_merah=29; beras_premium=29
+2023,7,07. REKAP JULI 2023.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2023,8,08. REKAP  AGUSTUS 2023.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2023,9,09. REKAP SEPTEMBER 2023.xlsx,ok,30,,,3,0,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2023,10,10. REKAP  OKTOBER 2023.xlsx,ok,31,,,2,2,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2023,11,11. REKAP NOVEMBER 2023.xlsx,ok,30,,,3,0,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2023,12,12. REKAP DESEMBER 2023.xlsx,ok,31,,,2,0,"sheet 16 -> tertulis 16/1/2024,sheet 17 -> tertulis 17/1/2024",cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,1,01. REKAP JANUARI 2024.xlsx,ok,31,,,2,0,sheet 1 -> tertulis 1/1/2023,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,2,02. REKAP FEBRUARI 2024.xlsx,ok,29,,,3,0,sheet 4 -> tertulis 5/2/2024,cabe_rawit=29; bawang_merah=29; beras_premium=29
+2024,3,03. REKAP MARET 2024.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,4,04. REKAP APRIL 2024.xlsx,ok,30,,,2,0,sheet 5 -> tertulis 5/3/2024,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2024,5,05. REKAP MEI 2024.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,6,06. REKAP JUNI 2024.xlsx,ok,30,,,2,0,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2024,7,07.REKAP JULI 2024.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,8,08. REKAP AGUSTUS 2024.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,9,09. REKAP SEPTEMBER 2024.xlsx,ok,30,,,2,1,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2024,10,10. REKAP OKTOBER 2024.xlsx,ok,31,,,2,31,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2024,11,11. REKAP NOVEMBER 2024.xlsx,ok,30,,,2,30,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2024,12,12. REKAP DESEMBER 2024.xlsx,ok,31,,,2,31,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2025,1,01. REKAPITULASI JANUARI 2025.xlsx,ok,31,,,2,31,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2025,2,02. REKAPITULASI FEBRUARI 2025.xlsx,ok,28,,,2,28,,cabe_rawit=28; bawang_merah=28; beras_premium=28
+2025,3,03. REKAPITULASI MARET 2025...xlsx,ok,30,,31,2,30,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2025,4,04. REKAPITULASI APRIL 2025.xlsx,ok,30,,,2,30,sheet 30 -> tertulis 30/3/2025,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2025,5,05. REKAPITULASI MEI 2025.xlsx,ok,31,,,2,31,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2025,6,06. REKAPITULASI JUNI 2025.xlsx,ok,30,,,2,30,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2025,7,07. REKAPITULASI JULI 2025.xlsx,ok,31,,,2,4,sheet 26 -> tertulis 26/5/2025,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2025,8,08. REKAPITULASI AGUSTUS 2025.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2025,9,09. REKAPITULASI SEPTEMBER 2025.xlsx,ok,30,,,2,0,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2025,10,10. REKAPITULASI OKTOBER 2025.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2025,11,11. REKAPITULASI NOVEMBER 2025.xlsx,ok,30,,,2,0,,cabe_rawit=30; bawang_merah=30; beras_premium=30
+2025,12,12. REKAPITULASI DESEMBER 2025.xlsx,ok,31,,,2,0,sheet 28 -> tertulis 15/12/2025,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2026,1,01. REKAPITULASI JANUARI 2026.xlsx,ok,31,,,2,3,"sheet 23 -> tertulis 23/1/2025,sheet 24 -> tertulis 24/1/2025,sheet 25 -> tertulis 25/1/2025,sheet 26 -> tertulis 26/1/2025,sheet 27 -> tertulis 27/1/2025,sheet 28 -> tertulis 28/1/2025,sheet 29 -> tertulis 29/1/2025,sheet 30 -> tertulis 30/1/2025",cabe_rawit=30; bawang_merah=30; beras_premium=30
+2026,2,02. REKAPITULASI FEBRUARI 2026.xlsx,ok,28,,,2,0,,cabe_rawit=28; bawang_merah=28; beras_premium=28
+2026,3,03. REKAPITULASI MARET 2026.xlsx,ok,31,,,2,0,"sheet 20 -> tertulis 19/3/2026,sheet 21 -> tertulis 19/3/2026,sheet 22 -> tertulis 19/3/2026,sheet 23 -> tertulis 19/3/2026",cabe_rawit=31; bawang_merah=31; beras_premium=31
+2026,4,04. REKAPITULASI APRIL 2026.xlsx,ok,27,"28,29,30","28,29,30",2,0,,cabe_rawit=27; bawang_merah=27; beras_premium=27
+2026,5,05. REKAPITULASI MEI 2026.xlsx,ok,31,,,2,0,sheet 25 -> tertulis 24/5/2026,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2026,6,06. REKAPITULASI JUNI 2026.xlsx,ok,30,,,2,0,"sheet 1 -> tertulis 1/4/2026,sheet 2 -> tertulis 2/4/2026,sheet 3 -> tertulis 3/4/2026,sheet 4 -> tertulis 4/4/2026,sheet 5 -> tertulis 5/4/2026,sheet 6 -> tertulis 6/4/2026,sheet 7 -> tertulis 7/4/2026,sheet 8 -> tertulis 8/4/2026,sheet 9 -> tertulis 9/4/2026,sheet 10 -> tertulis 10/4/2026,sheet 11 -> tertulis 11/4/2026,sheet 12 -> tertulis 12/4/2026,sheet 13 -> tertulis 13/4/2026,sheet 14 -> tertulis 14/4/2026,sheet 15 -> tertulis 15/4/2026,sheet 16 -> tertulis 16/4/2026,sheet 17 -> tertulis 17/4/2026,sheet 18 -> tertulis 18/4/2026,sheet 19 -> tertulis 19/4/2026,sheet 20 -> tertulis 20/4/2026,sheet 21 -> tertulis 21/4/2026,sheet 22 -> tertulis 22/4/2026,sheet 23 -> tertulis 23/4/2026,sheet 24 -> tertulis 24/4/2026,sheet 25 -> tertulis 25/4/2026,sheet 26 -> tertulis 26/4/2026,sheet 27 -> tertulis 27/4/2026,sheet 28 -> tertulis 27/4/2026,sheet 29 -> tertulis 27/4/2026,sheet 30 -> tertulis 27/4/2026",cabe_rawit=30; bawang_merah=30; beras_premium=30
+2026,7,07. REKAPITULASI JULI 2026.xlsx,ok,31,,,2,0,,cabe_rawit=31; bawang_merah=31; beras_premium=31
+2026,8,08. REKAPITULASI AGUSTUS 2026.xlsx,ok,31,,,2,0,sheet 14 -> tertulis 14/6/2026,cabe_rawit=31; bawang_merah=31; beras_premium=31
