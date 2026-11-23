@@ -2,13 +2,13 @@
 
 Tugas akhir mata kuliah **Analisis Deret Waktu (ADW)** — Program Studi Sains Data, UPN "Veteran" Jawa Timur.
 
-Penelitian ini membandingkan performa model statistik klasik (**SARIMA**) dengan machine learning (**Random Forest** dan **XGBoost**) untuk memprediksi harga bahan pokok harian di Surabaya. Hasil akhir dari proyek ini berupa analisis komparatif dan **infografis** pemantauan harga pangan.
+Penelitian ini membandingkan performa model statistik klasik (**SARIMA**) dengan machine learning (**Random Forest** dan **XGBoost**) untuk memprediksi harga bahan pokok harian di Surabaya.
 
 ---
 
 ## 1. Latar Belakang & Masalah
 
-Harga pangan di pasar tradisional sering kali naik-turun secara drastis, terutama komoditas seperti cabai dan bawang. Proyek ini bertujuan untuk:
+Harga pangan di pasar tradisional sering kali naik-turun secara drastis. Proyek ini bertujuan untuk:
 1. Menganalisis karakteristik data harga harian (tren, pola musiman, dan volatilitas).
 2. Membandingkan akurasi model SARIMA, Random Forest, dan XGBoost untuk prediksi 1 hari ($h=1$), 7 hari ($h=7$), dan 30 hari ($h=30$) ke depan.
 3. Mengetahui pada kondisi volatilitas seperti apa model statistik unggul dibanding machine learning.
@@ -17,75 +17,102 @@ Harga pangan di pasar tradisional sering kali naik-turun secara drastis, terutam
 
 ## 2. Dataset
 
-* **Sumber:** Data laporan harga harian dari 7 pasar tradisional di Surabaya (Bappedalitbang / BRIDA Surabaya).
-* **Periode:** 1 Januari 2023 – 31 Agustus 2026 (1.330 hari).
-* **Pengolahan:** Harga dihitung dari rata-rata 7 pasar per hari untuk mewakili harga tingkat kota.
-* **Komoditas Terpilih:**
-  Dipilih 3 komoditas berdasarkan tingkat volatilitasnya (*Coefficient of Variation* / CV):
-  - **Cabe Merah Kecil-Rawit** (CV = 0,422) $\rightarrow$ Volatilitas tinggi (sering lonjak drastis).
-  - **Bawang Merah Lokal** (CV = 0,226) $\rightarrow$ Volatilitas sedang.
-  - **Beras Premium** (CV = 0,067) $\rightarrow$ Volatilitas rendah (harga cenderung stabil).
+* **Sumber:** Data laporan harga harian dari 7 pasar tradisional di Surabaya.
+* **Periode:** 1 Januari 2023 – 31 Agustus 2026 (1.339 hari).
+* **Pengolahan:** Harga dihitung dari rata-rata 7 pasar per hari.
+* **Komoditas Terpilih (purposive sampling berdasarkan CV):**
+  - **Cabe Rawit** (CV = 0,42) — Volatilitas tinggi
+  - **Bawang Merah Lokal** (CV = 0,23) — Volatilitas sedang  
+  - **Beras Premium** (CV = 0,07) — Volatilitas rendah
 
 ---
 
-## 3. Metode yang Digunakan
+## 3. Metode
 
-1. **Baseline (Pembanding Dasar):**
-   * Naive (menebak pakai harga hari sebelumnya).
-   * Seasonal Naive (menebak pakai harga hari yang sama minggu lalu).
-2. **Statistik Klasik:**
-   * **SARIMA** (mencari orde terbaik pakai AIC/BIC, lalu cek uji residual Ljung-Box).
-3. **Machine Learning:**
-   * **Random Forest** (pendekatan ensemble bagging).
-   * **XGBoost** (pendekatan ensemble boosting).
-   * *Fitur input:* Lag harga (1, 2, 3, 7, 14, 30 hari), rolling mean/std (7 dan 30 hari), hari dalam minggu, bulan, dan penanda hari libur/Ramadan.
+| Model | Jenis | Keterangan |
+|-------|-------|------------|
+| Naive / Seasonal Naive | Baseline | Tebakan sederhana |
+| SARIMA | Statistik Klasik | Orde dipilih via AIC/BIC, cek residual Ljung-Box, BDS test |
+| Random Forest | ML (Bagging) | Feature: lag, rolling stats, calendar |
+| XGBoost | ML (Boosting) | Hyperparameter tuning + feature engineering |
 
 ---
 
-## 4. Evaluasi Model
+## 4. Validasi & Evaluasi
 
-* **Validasi Data:** Menggunakan *walk-forward validation* (rolling origin) agar tidak terjadi kebocoran data masa depan:
-  - Fold 1: Train 2023–2024 $\rightarrow$ Test Awal 2025
-  - Fold 2: Train 2023–Mid 2025 $\rightarrow$ Test Akhir 2025
-  - Fold 3: Train 2023–2025 $\rightarrow$ Test 2026
-* **Metrik Evaluasi:**
-  - **MASE** (metrik utama, jika nilainya $< 1$ berarti model lebih bagus dari tebakan Naive).
-  - **RMSE & MAE** (untuk melihat error dalam satuan Rupiah).
-  - Uji beda nyata **Diebold-Mariano** untuk memastikan perbedaan akurasi antar-model valid secara statistik.
+* **Validasi:** Rolling Origin 3 Fold (Walk-forward)
+  - Fold 1: Train 2023–2024 → Test Jan–Jun 2025
+  - Fold 2: Train 2023–Jun 2025 → Test Jul–Des 2025
+  - Fold 3: Train 2023–2025 → Test Jan–Agu 2026
+* **Horizon:** $h = 1, 7, 30$ hari
+* **Metrik Utama:** **MASE** (Mean Absolute Scaled Error)
+* **Metrik Pendukung:** RMSE, MAE, MAPE
+* **Uji Statistik:** Diebold-Mariano (paired, per horizon)
 
 ---
 
-## 5. Struktur Folder
+## 5. Struktur Repositori
 
 ```text
+repo-root/
 ├── README.md
-├── requirements.txt
-├── data/
-│   └── seri_harian.csv              # Data gabungan rata-rata 7 pasar
-├── notebooks/
-│   ├── 01_persiapan_dan_eda.ipynb   # Bersih data, visualisasi, & baseline
-│   ├── 02_pemodelan_sarima.ipynb    # Model SARIMA & cek residual
-│   ├── 03_pemodelan_rf.ipynb        # Feature engineering & Random Forest
-│   ├── 04_pemodelan_xgboost.ipynb   # Model XGBoost & tuning
-│   └── 05_evaluasi_komparasi.ipynb  # Perbandingan MASE/RMSE & uji statistik
-├── output/
-│   ├── tabel_evaluasi.csv           # Hasil rekap metrik semua model
-│   └── figures/                     # Grafik prediksi vs aktual
-└── infografis/
-    └── infografis_final.png         # Poster infografis output UAS
+├── progress/
+│   ├── minggu-1/          # ETL, EDA, Baseline, Stasioneritas
+│   │   ├── 00_etl.ipynb
+│   │   ├── 01_eda.ipynb
+│   │   ├── seri_harian.csv
+│   │   ├── etl_log.csv / etl_konflik.csv
+│   │   ├── statistika_deskriptif.csv
+│   │   ├── uji_stasioneritas.csv
+│   │   ├── baseline_metrik.csv
+│   │   ├── ringkasan_mutu_data.csv
+│   │   ├── 01_tren_harga_historis.png
+│   │   ├── 02_boxplot_tahunan.png
+│   │   └── README.md
+│   ├── minggu-2/          # SARIMA Modeling & Diagnostics
+│   │   ├── 02_sarima.ipynb
+│   │   ├── sarima_orders.csv
+│   │   ├── sarima_forecast_all.csv
+│   │   ├── sarima_metrics_summary.csv
+│   │   ├── sarima_metrics_per_fold.csv
+│   │   ├── sarima_residual_diagnostics.csv
+│   │   ├── sarima_bds_test.csv
+│   │   ├── sarima_model_summaries.txt
+│   │   ├── grid_search_*.csv
+│   │   ├── 03_acf_pacf_sarima.png
+│   │   ├── 04_residual_diagnostics.png
+│   │   ├── 05_sarima_forecast_vs_actual.png
+│   │   └── README.md
+│   └── minggu-3/          # Random Forest & XGBoost (akan diisi)
+│       ├── 03_random_forest.ipynb
+│       └── README.md
 ```
 
 ---
 
 ## 6. Cara Menjalankan
 
-1. Clone repositori ini:
+1. Clone repositori:
    ```bash
    git clone https://github.com/xFarell/time-series-analysis-A.git
    cd time-series-analysis-A
    ```
-2. Install library yang dibutuhkan:
+2. Install dependencies (Python 3.12+):
    ```bash
    pip install -r requirements.txt
    ```
-3. Buka dan jalankan Jupyter Notebook secara berurutan dari folder `notebooks/`.
+3. Jalankan notebook per minggu:
+   - Minggu 1: `progress/minggu-1/00_etl.ipynb` → `01_eda.ipynb`
+   - Minggu 2: `progress/minggu-2/02_sarima.ipynb`
+   - Minggu 3: `progress/minggu-3/03_random_forest.ipynb` → `04_xgboost.ipynb`
+   - Minggu 5: `progress/minggu-5/05_perbandingan.ipynb` (akan dibuat)
+
+---
+
+## 7. Hasil Sementara (Minggu 1-2)
+
+| Model | Cabe (MAPE h=30) | Bawang (MAPE h=30) | Beras (MAPE h=30) |
+|-------|------------------|---------------------|-------------------|
+| SARIMA | 51.36% | 16.16% | 0.81% |
+
+SARIMA cukup baik untuk beras (stabil), tapi error besar untuk cabe/bawang di horizon panjang → dibutuhkan ML non-linear.
