@@ -1,20 +1,22 @@
 # Minggu 3 — SARIMA Modeling & Diagnostics
 
-## Artefak SARIMA
-| File | Deskripsi |
-|------|-----------|
-| `02_sarima.ipynb` | Notebook lengkap: ACF/PACF, grid search AIC/BIC, fit, diagnostik residual, rolling origin forecasting, BDS test |
-| `sarima_orders.csv` | Orde SARIMA terpilih per komoditas (AIC minimal) |
-| `sarima_forecast_all.csv` | Semua prediksi rolling origin (3 fold × 3 komoditas × 3 horizon) |
-| `sarima_metrics_summary.csv` | Metrik MAE, RMSE, MAPE pooled per komoditas & horizon |
-| `sarima_metrics_per_fold.csv` | Metrik per fold untuk analisis stabilitas |
-| `sarima_residual_diagnostics.csv` | Hasil uji Ljung-Box, Jarque-Bera, ARCH-LM |
-| `sarima_bds_test.csv` | Hasil BDS test pada residual (justifikasi non-linearitas → ML) |
-| `grid_search_*.csv` | Hasil grid search AIC/BIC per komoditas |
-| `sarima_model_summaries.txt` | Ringkasan model statistik lengkap |
-| `03_acf_pacf_sarima.png` | ACF/PACF level & diff 1 untuk 3 komoditas |
-| `04_residual_diagnostics.png` | Residual: time series, histogram, Q-Q, ACF |
-| `05_sarima_forecast_vs_actual.png` | Forecast vs aktual h=1 per komoditas |
+## Struktur
+```
+minggu-3/
+└── sarima/              # Semua artefak SARIMA
+    ├── 02_sarima.ipynb
+    ├── sarima_orders.csv
+    ├── sarima_forecast_all.csv
+    ├── sarima_metrics_summary.csv
+    ├── sarima_metrics_per_fold.csv
+    ├── sarima_residual_diagnostics.csv
+    ├── sarima_bds_test.csv
+    ├── sarima_model_summaries.txt
+    ├── grid_search_*.csv
+    ├── 03_acf_pacf_sarima.png
+    ├── 04_residual_diagnostics.png
+    └── 05_sarima_forecast_vs_actual.png
+```
 
 ## Orde Terpilih (AIC)
 | Komoditas | Order (p,d,q)(P,D,Q)₇ |
@@ -44,9 +46,3 @@
 | Cabe Rawit | 30 | 23,543.40 | 29,686.77 | 51.36% |
 
 **Kesimpulan**: SARIMA cukup baik untuk beras (MAPE <1%), tapi error melonjak di horizon panjang untuk cabe & bawang. Baseline untuk dibandingkan dengan ML.
-
----
-
-## Next: Random Forest & XGBoost (akan ditambahkan)
-- `03_random_forest.ipynb` — Feature engineering, RF training, rolling origin
-- `04_xgboost.ipynb` — XGBoost training + hyperparameter tuning
