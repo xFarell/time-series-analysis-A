@@ -56,6 +56,7 @@ Harga pangan di pasar tradisional sering kali naik-turun secara drastis. Proyek 
 ```text
 repo-root/
 ├── README.md
+├── requirements.txt
 ├── progress/
 │   ├── minggu-1/          # ETL, EDA, Baseline, Stasioneritas
 │   │   ├── 00_etl.ipynb
@@ -69,22 +70,21 @@ repo-root/
 │   │   ├── 01_tren_harga_historis.png
 │   │   ├── 02_boxplot_tahunan.png
 │   │   └── README.md
-│   ├── minggu-2/          # SARIMA Modeling & Diagnostics
-│   │   ├── 02_sarima.ipynb
-│   │   ├── sarima_orders.csv
-│   │   ├── sarima_forecast_all.csv
-│   │   ├── sarima_metrics_summary.csv
-│   │   ├── sarima_metrics_per_fold.csv
-│   │   ├── sarima_residual_diagnostics.csv
-│   │   ├── sarima_bds_test.csv
-│   │   ├── sarima_model_summaries.txt
-│   │   ├── grid_search_*.csv
-│   │   ├── 03_acf_pacf_sarima.png
-│   │   ├── 04_residual_diagnostics.png
-│   │   ├── 05_sarima_forecast_vs_actual.png
-│   │   └── README.md
-│   └── minggu-3/          # Random Forest & XGBoost (akan diisi)
-│       ├── 03_random_forest.ipynb
+│   ├── minggu-2/          # Poster Infografis
+│   │   └── progress2_poster.png
+│   └── minggu-3/          # SARIMA Modeling & Diagnostics
+│       ├── 02_sarima.ipynb
+│       ├── sarima_orders.csv
+│       ├── sarima_forecast_all.csv
+│       ├── sarima_metrics_summary.csv
+│       ├── sarima_metrics_per_fold.csv
+│       ├── sarima_residual_diagnostics.csv
+│       ├── sarima_bds_test.csv
+│       ├── sarima_model_summaries.txt
+│       ├── grid_search_*.csv
+│       ├── 03_acf_pacf_sarima.png
+│       ├── 04_residual_diagnostics.png
+│       ├── 05_sarima_forecast_vs_actual.png
 │       └── README.md
 ```
 
@@ -103,13 +103,13 @@ repo-root/
    ```
 3. Jalankan notebook per minggu:
    - Minggu 1: `progress/minggu-1/00_etl.ipynb` → `01_eda.ipynb`
-   - Minggu 2: `progress/minggu-2/02_sarima.ipynb`
-   - Minggu 3: `progress/minggu-3/03_random_forest.ipynb` → `04_xgboost.ipynb`
-   - Minggu 5: `progress/minggu-5/05_perbandingan.ipynb` (akan dibuat)
+   - Minggu 3: `progress/minggu-3/02_sarima.ipynb`
+   - Minggu 4 (akan datang): `progress/minggu-4/03_random_forest.ipynb` → `04_xgboost.ipynb`
+   - Minggu 5 (akan datang): `progress/minggu-5/05_perbandingan.ipynb`
 
 ---
 
-## 7. Hasil Sementara (Minggu 1-2)
+## 7. Hasil Sementara (Minggu 1-3)
 
 | Model | Cabe (MAPE h=30) | Bawang (MAPE h=30) | Beras (MAPE h=30) |
 |-------|------------------|---------------------|-------------------|
